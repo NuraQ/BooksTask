@@ -4,23 +4,23 @@ var search = false;
 window.onscroll = function () {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     if (totalItemsCount - currentIndex >= 40) {
-        console.log(currentIndex,"curr")
+      console.log(currentIndex, "curr");
       currentIndex += 40;
     } else {
-      //currentIndex += totalItemsCount - currentIndex;
+      currentIndex += totalItemsCount - currentIndex;
     }
-    if (!search) {
+    if (!search && currentIndex < totalItemsCount) {
       fetchData();
-    } else {
-        getSearchApiResult();
+    } else if(search &&  currentIndex < totalItemsCount) {
+      getSearchApiResult();
     }
   }
-};
+}
 function fetchData() {
-    console.log(currentIndex,"curr in fetch")
+  console.log(currentIndex, "curr in fetch");
 
   fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=intitle:&maxResults=40&start-index=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
+    `https://www.googleapis.com/books/v1/volumes?q=intitle:&maxResults=40&startIndex=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
     {
       method: "get",
       headers: {
@@ -63,9 +63,8 @@ function removeAllChildNodes(parent) {
 }
 
 function filter() {
-  currentIndex = 0;
+//   currentIndex = 0;
   search = true;
-  console.log(input, "in");
   const container = document.querySelector("#content");
   removeAllChildNodes(container);
   getSearchApiResult();
@@ -74,7 +73,7 @@ function filter() {
 function getSearchApiResult() {
   var input = document.getElementById("search").value;
   fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=intitle:${input}&maxResults=40&start-index=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
+    `https://www.googleapis.com/books/v1/volumes?q=intitle:${input}&maxResults=40&startIndex=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
     {
       method: "get",
       headers: {
