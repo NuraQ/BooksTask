@@ -38,7 +38,7 @@ function fetchData() {
 
 function displayBooks(data) {
   var div = document.getElementById("content");
-  for (item of data) {
+  for (let item of data) {
     col = document.createElement("div");
     img = document.createElement("img");
     col.className = "column";
@@ -50,9 +50,9 @@ function displayBooks(data) {
     img.className = "center";
     img.loading = "lazy";
     img.addEventListener("click", () => {
-        localStorage.setItem('clickedObj', JSON.stringify(item));
-        window.location.href = `./Element.html?name=${item}`;
-    });
+        localStorage.setItem('bookObj', JSON.stringify(item));
+        window.location.href = `./Element.html`;
+    })
     p.appendChild(text);
     col.appendChild(img);
     col.appendChild(p);

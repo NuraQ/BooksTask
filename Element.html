@@ -1,17 +1,22 @@
-<div id="here">
-    ELEMENT
-</div>
-<script>
-   window.onload = function () {
-    var url = document.location.href,
-        params = url.split('?')[1].split('&'),
-        data = {}, tmp;
-    for (var i = 0, l = params.length; i < l; i++) {
-         tmp = params[i].split('=');
-         data[tmp[0]] = tmp[1];
-    }
-    console.log(localStorage.getItem("clickedObj"))
-    document.getElementById('here').innerHTML = JSON.stringify(data);
-}
-
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="element.css" />
+  </head>
+  <body>
+    <div id="here">
+        <h id="title"></h> 
+         <div class="container">
+             <img id="itemImage" class="child"></img>
+             <p id="info" class="child"></p>
+         </div>
+         <hr/>
+         <div class="paraContainer">
+            <p id="description" class="child"></p>
+        </div>
+       </div>
+    <script type="text/javascript" src="elementScript.js">
+    </script>
+  </body>
+</html>
+<!-- var item = localStorage.getItem("clickedObj"); -->
