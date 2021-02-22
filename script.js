@@ -11,11 +11,11 @@ window.onscroll = function () {
     }
     if (!search && currentIndex < totalItemsCount) {
       fetchData();
-    } else if(search &&  currentIndex < totalItemsCount) {
+    } else if (search && currentIndex < totalItemsCount) {
       getSearchApiResult();
     }
   }
-}
+};
 function fetchData() {
   console.log(currentIndex, "curr in fetch");
 
@@ -49,6 +49,10 @@ function displayBooks(data) {
       : "";
     img.className = "center";
     img.loading = "lazy";
+    img.addEventListener("click", () => {
+        localStorage.setItem('clickedObj', JSON.stringify(item));
+        window.location.href = `./Element.html?name=${item}`;
+    });
     p.appendChild(text);
     col.appendChild(img);
     col.appendChild(p);
@@ -63,7 +67,7 @@ function removeAllChildNodes(parent) {
 }
 
 function filter() {
-//   currentIndex = 0;
+  currentIndex = 0;
   search = true;
   const container = document.querySelector("#content");
   removeAllChildNodes(container);
