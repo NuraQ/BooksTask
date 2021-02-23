@@ -2,8 +2,22 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="element.css" />
+    <link rel="stylesheet" type="text/css" href="home.css" />
+
   </head>
   <body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <div class="search-container">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search.."
+            name="search"
+            onchange="filter()"
+          />
+        </div>
+    </div>
     <div id="here">
         <h id="title"></h> 
          <div class="container">
