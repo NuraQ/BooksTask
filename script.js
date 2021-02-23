@@ -1,10 +1,13 @@
 var currentIndex = 0;
 var totalItemsCount = 0;
 var search = false;
+window.onload = function () {
+  fetchData();
+};
+
 window.onscroll = function () {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     if (totalItemsCount - currentIndex >= 40) {
-      console.log(currentIndex, "curr");
       currentIndex += 40;
     } else {
       currentIndex += totalItemsCount - currentIndex;
@@ -16,9 +19,8 @@ window.onscroll = function () {
     }
   }
 };
-function fetchData() {
-  console.log(currentIndex, "curr in fetch");
 
+function fetchData() {
   fetch(
     `https://www.googleapis.com/books/v1/volumes?q=intitle:&maxResults=40&startIndex=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
     {
@@ -30,7 +32,6 @@ function fetchData() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       totalItemsCount = data.totalItems;
       displayBooks(data.items);
     });
@@ -42,7 +43,8 @@ function displayBooks(data) {
     col = document.createElement("div");
     img = document.createElement("img");
     col.className = "column";
-    p = document.createElement("p");
+    p = document.createElement("div");
+    p.className = "cardName"
     text = document.createTextNode(`${item.volumeInfo.title}`);
     img.src = item.volumeInfo.imageLinks
       ? item.volumeInfo.imageLinks.thumbnail
@@ -50,9 +52,9 @@ function displayBooks(data) {
     img.className = "center";
     img.loading = "lazy";
     img.addEventListener("click", () => {
-        localStorage.setItem('bookObj', JSON.stringify(item));
-        window.location.href = `./Element.html`;
-    })
+      localStorage.setItem("bookObj", JSON.stringify(item));
+      window.location.href = `./Element.html`;
+    });
     p.appendChild(text);
     col.appendChild(img);
     col.appendChild(p);
@@ -87,9 +89,7 @@ function getSearchApiResult() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data, "result");
       totalItemsCount = data.totalItems;
-
       displayBooks(data.items);
     });
 }

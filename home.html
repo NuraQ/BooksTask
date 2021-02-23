@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="home.css" />
   </head>
   <body>
-    <div class="search-container">
-      <input
-        id="search"
-        type="text"
-        placeholder="Search.."
-        name="search"
-        onchange="filter()"
-      />
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <div class="search-container">
+        <input
+          id="search"
+          type="text"
+          placeholder="Search.."
+          name="search"
+          onchange="filter()"
+        />
+      </div>
     </div>
-
     <h2>Book Store</h2>
     <div id="content" class="container"></div>
-    <button type="button" onclick="fetchData()">Change Content</button>
-
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

@@ -7,9 +7,7 @@ window.onload = function () {
     let para = document.getElementById("info")
     let image = document.getElementById("itemImage")
     let details = document.getElementById("description")
-
     para.innerHTML += book.volumeInfo.title   
-    console.log(book)
     image.src = book.volumeInfo.imageLinks.thumbnail
     details.innerHTML = book.volumeInfo.description
  };

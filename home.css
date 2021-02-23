@@ -1,24 +1,90 @@
+body{
+    background-color: rgba(0, 0, 0, 0.19);
+}
+.search-container{  
+    margin-left: auto;
+    height: 100%;
+    align-self: center;
+}
+#search{
+    background-color: rgb(219, 216, 216);
+    height: 100%;
+
+}
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
 }
 
 .column {
-  flex: 20%; /* explanation below */
-  background-color: blanchedalmond;
+ display: flex;
+  flex: 20%; 
   margin: 5px 5px;
   padding: 5px 5px;
   max-height: 350px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  flex-direction: column;
+
+}
+.column:hover >  .cardName{
+    display: block;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgb(247, 242, 242); 
+    letter-spacing: -1px;      
+    font: bold 20px/22px Helvetica, Sans-Serif; 
+    font-size: 11px;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px; 
 }
 img {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-p{
-    text-align: center;
 
+.cardName {
+    display: none;
 }
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
+.topnav {
+    margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  color: white;
+}
+@media only screen and (max-width:500px) {
+    .column{
+      flex: 100%;
+    }
+
+  }
