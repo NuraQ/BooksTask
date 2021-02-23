@@ -6,12 +6,21 @@ window.onload = function () {
   let para = document.getElementById("info");
   let image = document.getElementById("itemImage");
   let details = document.getElementById("description");
-  
+  let autrhor = document.getElementById("author");
+  let price = document.getElementById("price");
+
   para.innerHTML +=
     book.volumeInfo.title +
     `<br/><br/>` +
     (book.volumeInfo.subtitle ? book.volumeInfo.subtitle : "");
   console.log(book);
-  image.src = book.volumeInfo.imageLinks.thumbnail;
-  details.innerHTML = book.volumeInfo.description;
+  fetch(book.selfLink)
+    .then((data) => data.json())
+    .then((newData) => {
+      image.src = newData.volumeInfo.imageLinks.medium;
+      details.innerHTML = newData.volumeInfo.description
+        ? newData.volumeInfo.description
+        : book.volumeInfo.description;
+    });
+    autrhor.innerHTML = "by: " + book.volumeInfo.authors;
 };

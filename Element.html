@@ -2,27 +2,17 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="element.css" />
-    <link rel="stylesheet" type="text/css" href="home.css" />
-
   </head>
   <body>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <div class="search-container">
-          <input
-            id="search"
-            type="text"
-            placeholder="Search.."
-            name="search"
-            onchange="filter()"
-          />
-        </div>
-    </div>
     <div id="here">
         <h id="title"></h> 
          <div class="container">
              <img id="itemImage" class="child"></img>
-             <p id="info" class="child"></p>
+             <div class="detailsContainer">
+                 <p id="info" class="title"></p>
+                 <p id="author"></p>
+                 <p id="price">price: 9.99$</p>
+            </div>
          </div>
          <hr/>
          <div class="paraContainer">
