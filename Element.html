@@ -6,12 +6,6 @@
 
   </head>
   <body>
-    <div id="here">
-        <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-         </div>
-         
-        <h id="title"></h> 
          <div class="container">
              <img id="itemImage" class="child"></img>
              <div class="detailsContainer">
@@ -27,23 +21,24 @@
                  <div class="star"></div>
                 </div>
                 <button onclick="openForm()">Buy</button>
-                <div class="form-popup" id="myForm">
-                    <form action="/action_page.php" class="form-container">
-                      <h1>Login</h1>
-                  
-                      <label for="email"><b>Email</b></label>
-                      <input type="text" placeholder="Enter Email" name="email" required>
-                  
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-                  
-                      <button type="submit" class="btn">Login</button>
-                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                    </form>
-                  </div>
+               
             </div>
      
          </div>
+         <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>credit card info</h1>
+          
+              <label for="email"><b>credit card id</b></label>
+              <input type="text" placeholder="Enter id" name="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">Buy</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
          <hr/>
          <div class="paraContainer">
             <p id="description" class="child"></p>

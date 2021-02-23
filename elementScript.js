@@ -8,7 +8,7 @@ window.onload = function () {
   let details = document.getElementById("description");
   let autrhor = document.getElementById("author");
   let price = document.getElementById("price");
-    
+
   para.innerHTML +=
     book.volumeInfo.title +
     `<br/><br/>` +
@@ -22,16 +22,17 @@ window.onload = function () {
         ? newData.volumeInfo.description
         : book.volumeInfo.description;
     });
-    autrhor.innerHTML = "by: " + book.volumeInfo.authors;
+  autrhor.innerHTML = "by: " + book.volumeInfo.authors;
 };
-function fillColor(){
-
-}
+function fillColor() {}
 
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
-  
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
+  document.getElementById("myForm").style.display = "block";
+  document.body.id = "b";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.body.style.filter = "blur(0px)";
+  document.body.id = "";
+}
