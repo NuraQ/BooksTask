@@ -24,3 +24,14 @@ window.onload = function () {
     });
     autrhor.innerHTML = "by: " + book.volumeInfo.authors;
 };
+function fillColor(){
+
+}
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }

@@ -19,13 +19,28 @@
                  <p id="author"></p>
                  <div class="priceContainer">
                  <p id="price">Price: 9.99$</p>
-                 <svg  class="star" xml>
+                 <svg  class="star" onclick="fillColor()" >
                  </svg>
                  <svg class="star"></svg>
                  <div class="star"></div>
                  <div class="star"></div>
                  <div class="star"></div>
                 </div>
+                <button onclick="openForm()">Buy</button>
+                <div class="form-popup" id="myForm">
+                    <form action="/action_page.php" class="form-container">
+                      <h1>Login</h1>
+                  
+                      <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                      <button type="submit" class="btn">Login</button>
+                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                  </div>
             </div>
      
          </div>
