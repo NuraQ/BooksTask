@@ -8,7 +8,7 @@ window.onload = function () {
   let details = document.getElementById("description");
   let autrhor = document.getElementById("author");
   let price = document.getElementById("price");
-
+    
   para.innerHTML +=
     book.volumeInfo.title +
     `<br/><br/>` +
