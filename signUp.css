@@ -60,3 +60,18 @@
     -webkit-filter: blur(2px);
     filter: blur(2px);
   }
+  .signin{
+    background-color: #5e5858;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 1.8;
+  }
+  .main{
+      display: flex;
+      flex-direction: row;
+      background-color: rgb(255, 205, 209);
+  }

@@ -21,6 +21,7 @@ window.onscroll = function () {
 };
 
 function fetchData() {
+  console.log("fetch");
   fetch(
     `https://www.googleapis.com/books/v1/volumes?q=intitle:&maxResults=40&startIndex=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
     {
@@ -44,7 +45,7 @@ function displayBooks(data) {
     img = document.createElement("img");
     col.className = "column";
     p = document.createElement("div");
-    p.className = "cardName"
+    p.className = "cardName";
     text = document.createTextNode(`${item.volumeInfo.title}`);
     img.src = item.volumeInfo.imageLinks
       ? item.volumeInfo.imageLinks.thumbnail
@@ -54,9 +55,8 @@ function displayBooks(data) {
     img.addEventListener("click", () => {
       localStorage.setItem("bookObj", JSON.stringify(item));
       // window.location.href = `./Element.html`;
-        // window.location.href = `./loginPopup.html`;
-        openForm();
-
+      // window.location.href = `./loginPopup.html`;
+      openForm();
     });
     p.appendChild(text);
     col.appendChild(img);

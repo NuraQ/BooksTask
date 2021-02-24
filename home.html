@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="home.css" />
-    <link rel="stylesheet" type="text/css" href="popup.css" />
+    <link rel="stylesheet" type="text/css" href="signUp.css" />
   </head>
   <body>
     <ul class="topnav">
@@ -26,22 +26,28 @@
     <h2>Book Store</h2>
     <div id="content" class="container"></div>
     <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
-        <h1>credit card info</h1>
-        <label for="email"><b>credit card id</b></label>
-        <input type="text" placeholder="Enter id" name="email" required />
+      <form action="./Element.html" class="form-container">
+        <h1 id="header">Sign Up!</h1>
+        <label for="email"><b>email</b></label>
+        <input type="text" placeholder="Enter id" name="email" id="email" required />
         <label for="psw"><b>Password</b></label>
         <input
           type="password"
           placeholder="Enter Password"
           name="psw"
+          id="password"
           required
         />
-        <button type="submit" class="btn">Buy</button>
+        <button  class="btn" id="registerBtn" onclick="signUp()">Sign Up  !</button>
         <button type="button" class="btn cancel" onclick="closeForm()">
-          Close
+          Cancel
+        </button>
+        OR already have an acount?<a href="#home" onclick="displayLogin()">click here!</a>
+        <button type="button" class="btn" onclick="login()">
+          login
         </button>
       </form>
+      
     </div>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="loginScript.js"></script>

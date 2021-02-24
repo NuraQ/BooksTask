@@ -1,6 +1,8 @@
 let bookObject = null;
 window.onload = function () {
   bookObject = localStorage.getItem("bookObj");
+  let usu = localStorage.getItem("users");
+  console.log(usu)
   let book = JSON.parse(bookObject);
   let container = document.getElementById("container");
   let para = document.getElementById("info");
