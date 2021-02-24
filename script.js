@@ -18,6 +18,7 @@ window.onscroll = function () {
       getSearchApiResult();
     }
   }
+
 };
 
 function fetchData() {
