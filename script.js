@@ -53,7 +53,10 @@ function displayBooks(data) {
     img.loading = "lazy";
     img.addEventListener("click", () => {
       localStorage.setItem("bookObj", JSON.stringify(item));
-      window.location.href = `./Element.html`;
+      // window.location.href = `./Element.html`;
+        // window.location.href = `./loginPopup.html`;
+        openForm();
+
     });
     p.appendChild(text);
     col.appendChild(img);
