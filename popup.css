@@ -56,7 +56,8 @@
     opacity: 1;
   }
 
-  #b > *:not(#myForm) {
+  #b > *:not(#myForm,#loader) {
     -webkit-filter: blur(2px);
     filter: blur(2px);
   }
+

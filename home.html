@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="home.css" />
     <link rel="stylesheet" type="text/css" href="signUp.css" />
+    <link rel="stylesheet" type="text/css" href="navbar.css" />
   </head>
   <body>
-    <ul class="topnav">
-    <li> 
-      <a class="active" href="#home">Home</a>
-    </li> 
-    <li> 
-      <a class="" href="#home">Purchased Books</a>
-    </li> 
-      <div class="search-container">
-        <input
-          id="search"
-          type="text"
-          placeholder="Search.."
-          name="search"
-          onchange="filter()"
-        />
-      </div>
-    </ul>
+    <div w3-include-html="navbar.html"></div>
     <h2>Book Store</h2>
     <div id="content" class="container"></div>
     <div class="form-popup" id="myForm">
       <form action="./Element.html" class="form-container">
         <h1 id="header">Sign Up!</h1>
         <label for="email"><b>email</b></label>
-        <input type="text" placeholder="Enter id" name="email" id="email" required />
+        <input
+          type="text"
+          placeholder="Enter id"
+          name="email"
+          id="email"
+          required
+        />
         <label for="psw"><b>Password</b></label>
         <input
           type="password"
@@ -38,19 +29,20 @@
           id="password"
           required
         />
-        <button  class="btn" id="registerBtn" onclick="signUp()">Sign Up  !</button>
+        <button class="btn" id="registerBtn" onclick="signUp()">
+          Sign Up !
+        </button>
         <button type="button" class="btn cancel" onclick="closeForm()">
           Cancel
         </button>
-        OR already have an acount?<a href="#home" onclick="displayLogin()">click here!</a>
-        <button type="button" class="btn" onclick="login()">
-          login
-        </button>
+        OR already have an acount?<a href="#home" onclick="displayLogin()"
+          >click here!</a
+        >
+        <button type="button" class="btn" onclick="login()">login</button>
       </form>
-      
     </div>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="loginScript.js"></script>
-
+    <script type="text/javascript" src="importFile.js"></script>
   </body>
 </html>
