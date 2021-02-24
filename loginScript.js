@@ -37,7 +37,8 @@ function login() {
 
   if (users.includes(email + "," + pass)) {
       localStorage.setItem("logged",email + "," + pass);
-    window.location.href = `./Element.html`;
+      alert("successfully signed up!!!");
+    window.location.href = `./home.html`;
   } else {
     alert("wrong username and password!!!");
     window.location.href = `./home.html`;
@@ -53,8 +54,16 @@ function addBook() {
     loader.style.display = "none";  
     document.body.id = "";
     let bookList = JSON.parse(localStorage.getItem("bookList"));
+    let user = localStorage.getItem("logged")
     bookList = bookList ? bookList : []
-    bookList.push(JSON.parse(localStorage.getItem("bookObj")))
+    console.log(bookList.length,"lll")
+    let arr = bookList[bookList.length] ? bookList[bookList.length] : []   
+    // bookList[bookList.length - 1].push(arr)
+   if(arr.length == 0){
+    arr.push(user)
+   } 
+    arr.push(JSON.parse(localStorage.getItem("bookObj")))
+    bookList[bookList.length] = arr
     console.log(bookList,"BOOKS")
     localStorage.setItem("bookList",JSON.stringify(bookList))
   }, 5000); // 5 seconds

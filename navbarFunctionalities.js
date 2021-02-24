@@ -3,7 +3,6 @@ var totalItemsCount = 0;
 var search = false;
 window.onload = function () {
   includeHTML();
-  fetchData();
 };
 
 window.onscroll = function () {
@@ -13,31 +12,12 @@ window.onscroll = function () {
     } else {
       currentIndex += totalItemsCount - currentIndex;
     }
-    if (!search && currentIndex < totalItemsCount) {
-      fetchData();
-    } else if (search && currentIndex < totalItemsCount) {
+    if (search && currentIndex < totalItemsCount) {
       getSearchApiResult();
     }
   }
 };
 
-function fetchData() {
-  console.log("fetch");
-  fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=intitle:&maxResults=40&startIndex=${currentIndex}&key=AIzaSyCOBbymaad4eBVNFVF5JC-Pc0TQzE6AHOw`,
-    {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      totalItemsCount = data.totalItems;
-      displayBooks(data.items);
-    });
-}
 
 function displayBooks(data) {
   var div = document.getElementById("content");
@@ -55,13 +35,10 @@ function displayBooks(data) {
     img.loading = "lazy";
     img.addEventListener("click", () => {
       localStorage.setItem("bookObj", JSON.stringify(item));
-      let loggedUser = localStorage.getItem("logged");
-      if (loggedUser != "" &&  loggedUser != null){
-        alert("welcome " + loggedUser)
-        window.location.href = `./Element.html`
-      }else{
-        openForm();
-      }
+      // window.location.href = `./Element.html`;
+      // window.location.href = `./loginPopup.html`;
+      
+      openForm();
     });
     p.appendChild(text);
     col.appendChild(img);
@@ -100,4 +77,9 @@ function getSearchApiResult() {
       totalItemsCount = data.totalItems;
       displayBooks(data.items);
     });
+}
+
+function signoutT(){
+    alert("out")
+    localStorage.setItem("logged") = "";
 }

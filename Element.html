@@ -12,21 +12,29 @@
     <script type="text/javascript" src="importFile.js"></script>
 
     <div w3-include-html="navbar.html"></div>
-    <div class="container">
-      <img id="itemImage" class="child" />
-      <div class="detailsContainer">
-        <h1 id="info" class="title"></h1>
-        <p id="author"></p>
-        <div class="priceContainer">
-          <p id="price">Price: 9.99$</p>
-          <svg class="star" onclick="fillColor()"></svg>
-          <svg class="star"></svg>
-          <div class="star"></div>
-          <div class="star"></div>
-          <div class="star"></div>
+    <div class="wrapperMain">
+      <div class="container">
+        <img id="itemImage" class="child" />
+        <div class="detailsContainer">
+          <h1 id="info" class="title"></h1>
+          <p id="author"></p>
+          <div class="priceContainer">
+            <p id="price">Price: 9.99$</p>
+            <svg class="star" onclick="fillColor()"></svg>
+            <svg class="star"></svg>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+          <p id="category"></p>
+          <button onclick="openForm()">Buy</button>
         </div>
-        <p id="category"></p>
-        <button onclick="openForm()">Buy</button>
+      </div>
+      <hr />
+
+      <div class="paraContainer">
+        <h1 class="detailsTitle">Book Introduction</h1>
+        <p id="description" class="child"></p>
       </div>
     </div>
     <div class="loader" id="loader"></div>
@@ -51,11 +59,6 @@
           Close
         </button>
       </div>
-    </div>
-    <hr />
-    <div class="paraContainer">
-      <h1 class="detailsTitle">Book Introduction</h1>
-      <p id="description" class="child"></p>
     </div>
   </body>
 </html>
