@@ -19,7 +19,7 @@ function signUp() {
   users.push(user);
   console.log(users, "usrr");
   localStorage.setItem("users", JSON.stringify(users));
-  alert(users);
+  alert("signed up successfully")
 }
 
 function displayLogin() {
@@ -37,7 +37,6 @@ function login() {
 
   if (users.includes(email + "," + pass)) {
       localStorage.setItem("logged",email + "," + pass);
-      alert("successfully signed up!!!");
     window.location.href = `./home.html`;
   } else {
     alert("wrong username and password!!!");

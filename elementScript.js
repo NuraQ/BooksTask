@@ -28,4 +28,20 @@ window.onload = function () {
     });
   autrhor.innerHTML = "by: " + book.volumeInfo.authors;
 };
-function fillColor() {}
+function fillColor() {
+  var starContainer = document.querySelector(".stars");
+  var stars = Array.prototype.slice.call(starContainer.children);
+  var totalStars = stars.length;
+ 
+
+  console.log(totalStars); // => 5
+  starContainer.addEventListener('click', function(e) {
+    stars.forEach(function(el) {
+        el.classList.remove('is-selected')
+      })
+    var index = stars.indexOf(e.target)
+    var count = totalStars - index
+    e.target.classList.add('is-selected')
+  })
+
+}
