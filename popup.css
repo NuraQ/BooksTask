@@ -4,8 +4,8 @@
   display: none;
   position: fixed;
   bottom: 0;
-  width: 400px;
-  max-width: 400px;
+  width: 300px;
+  max-width: 300px;
   border: 3px solid #e2dfdf;
   border-radius: 25px;
   top: 40%;
@@ -18,7 +18,7 @@ z-index: 12;
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 400px;
+  max-width: 300px;
   border-radius: 25px;
   height: 80%;
   padding: 10px;

@@ -38,7 +38,7 @@ function login() {
   let usersString = localStorage.getItem("users");
   let users = JSON.parse(usersString);
   if (users == null || users == []){
-    alert("wrong username and password!!!csdfvsd");
+    alert("wrong username and password!!!");
     window.location.href = `./home.html`;
   }
  else if (users.includes(email + "," + pass)) {
