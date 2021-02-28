@@ -33,7 +33,7 @@
     display: block;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
     color: rgb(247, 242, 242); 
     letter-spacing: -1px;      
     font: bold 20px/22px Helvetica, Sans-Serif; 
