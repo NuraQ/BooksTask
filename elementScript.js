@@ -1,11 +1,12 @@
 let bookObject = null;
 window.onload = function () {
   includeHTML();
+  autheniticate();
   bookObject = localStorage.getItem("bookObj");
   let usu = localStorage.getItem("users");
   console.log(usu);
   let book = JSON.parse(bookObject);
-  let container = document.getElementById("container");
+  let pageCount = document.getElementById("pageC");
   let para = document.getElementById("info");
   let image = document.getElementById("itemImage");
   let details = document.getElementById("description");
@@ -25,6 +26,8 @@ window.onload = function () {
       details.innerHTML = newData.volumeInfo.description
         ? newData.volumeInfo.description
         : book.volumeInfo.description;
+        pageCount.innerHTML = (book.volumeInfo.pageCount ? book.volumeInfo.pageCount : newData.volumeInfo.pageCount) + " pages"
+
     });
   autrhor.innerHTML = "by: " + book.volumeInfo.authors;
 };
@@ -34,7 +37,7 @@ function fillColor() {
   var totalStars = stars.length;
  
 
-  console.log(totalStars); // => 5
+  console.log(totalStars); 
   starContainer.addEventListener('click', function(e) {
     stars.forEach(function(el) {
         el.classList.remove('is-selected')
@@ -44,4 +47,16 @@ function fillColor() {
     e.target.classList.add('is-selected')
   })
 
+}
+function autheniticate() {
+  let user = localStorage.getItem("logged");
+  setTimeout(function () {
+    if (user != "" && user != null) {
+      var elems = document.querySelectorAll(".hide");
+      [].forEach.call(elems, function (el) {
+        el.classList.remove("hide");
+        el.className += "show";
+      });
+    }
+  }, 300);
 }

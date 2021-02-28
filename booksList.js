@@ -1,29 +1,37 @@
 window.onload = function () {
-    includeHTML();
-  let div = document.getElementById("booksList");
+  includeHTML();
+  autheniticate();
   let allUsersbooks = JSON.parse(localStorage.getItem("bookList"));
-  let user = localStorage.getItem("logged")
-
-  console.log("USER LOGGED", user,"compare ",allUsersbooks);
-  for (userBooks of allUsersbooks) {
-    if(userBooks[0].includes(user)){
+  let user = localStorage.getItem("logged");
+  if (allUsersbooks != null) {
+    for (userBooks of allUsersbooks) {
+      if (userBooks[0].includes(user)) {
         displayBooks(userBooks);
+      }
     }
   }
-//   if (books != null){
-//     displayBooks(books);
-//   }
 };
-function signout(){
-    alert("bye bye" + localStorage.getItem("logged"))
-    localStorage.setItem("logged","")
+
+function autheniticate() {
+  let user = localStorage.getItem("logged");
+  setTimeout(function () {
+    if (user != "" && user != null) {
+      var elems = document.querySelectorAll(".hide");
+      [].forEach.call(elems, function (el) {
+        el.classList.remove("hide");
+        el.className += "show";
+      });
+    }
+  }, 200);
 }
+
+
 function displayBooks(data) {
   var div = document.getElementById("content");
   for (let item of data) {
-      if (data.indexOf(item) == 0){
-          continue;
-      }
+    if (data.indexOf(item) == 0) {
+      continue;
+    }
     col = document.createElement("div");
     img = document.createElement("img");
     col.className = "column";
@@ -40,9 +48,9 @@ function displayBooks(data) {
       // window.location.href = `./Element.html`;
       // window.location.href = `./loginPopup.html`;
       let loggedUser = localStorage.getItem("logged");
-      if (loggedUser != ""){
-        window.location.href = `./Element.html`
-      }else{
+      if (loggedUser != "" && loggedUser != null) {
+        window.location.href = `./Element.html`;
+      } else {
         openForm();
       }
     });

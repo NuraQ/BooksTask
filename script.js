@@ -4,8 +4,21 @@ var search = false;
 window.onload = function () {
   includeHTML();
   fetchData();
+  autheniticate();
 };
 
+function autheniticate() {
+  let user = localStorage.getItem("logged");
+  setTimeout(function () {
+    if (user != "" && user != null) {
+      var elems = document.querySelectorAll(".hide");
+      [].forEach.call(elems, function (el) {
+        el.classList.remove("hide");
+        el.className += "show";
+      });
+    }
+  }, 300);
+}
 window.onscroll = function () {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     if (totalItemsCount - currentIndex >= 40) {
@@ -51,15 +64,15 @@ function displayBooks(data) {
     img.src = item.volumeInfo.imageLinks
       ? item.volumeInfo.imageLinks.thumbnail
       : "";
+      img.alt="./img_girl.jpg"
     img.className = "center";
     img.loading = "lazy";
     img.addEventListener("click", () => {
       localStorage.setItem("bookObj", JSON.stringify(item));
       let loggedUser = localStorage.getItem("logged");
-      if (loggedUser != "" &&  loggedUser != null){
-        alert("welcome " + loggedUser)
-        window.location.href = `./Element.html`
-      }else{
+      if (loggedUser != "" && loggedUser != null) {
+        window.location.href = `./Element.html`;
+      } else {
         openForm();
       }
     });

@@ -1,9 +1,6 @@
 var currentIndex = 0;
 var totalItemsCount = 0;
 var search = false;
-window.onload = function () {
-  includeHTML();
-};
 
 window.onscroll = function () {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
@@ -12,6 +9,7 @@ window.onscroll = function () {
     } else {
       currentIndex += totalItemsCount - currentIndex;
     }
+   
     if (search && currentIndex < totalItemsCount) {
       getSearchApiResult();
     }
@@ -19,7 +17,8 @@ window.onscroll = function () {
 };
 
 
-function displayBooks(data) {
+
+function displaySearchedBooks(data) {
   var div = document.getElementById("content");
   for (let item of data) {
     col = document.createElement("div");
@@ -33,13 +32,7 @@ function displayBooks(data) {
       : "";
     img.className = "center";
     img.loading = "lazy";
-    img.addEventListener("click", () => {
-      localStorage.setItem("bookObj", JSON.stringify(item));
-      // window.location.href = `./Element.html`;
-      // window.location.href = `./loginPopup.html`;
-      
-      openForm();
-    });
+  
     p.appendChild(text);
     col.appendChild(img);
     col.appendChild(p);
@@ -78,8 +71,13 @@ function getSearchApiResult() {
       displayBooks(data.items);
     });
 }
-
-function signoutT(){
-    alert("out")
-    localStorage.setItem("logged") = "";
+function signout() {
+  alert("bye bye" + localStorage.getItem("logged"));
+  localStorage.setItem("logged", "");
+  var elems = document.querySelectorAll(".show");
+  [].forEach.call(elems, function (el) {
+    el.classList.remove("show");
+    el.className += "hide";
+  });
+  window.location.href = "./home.html"
 }

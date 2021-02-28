@@ -7,21 +7,31 @@
   display: flex;
   flex-direction: row-reverse;
 }
+.paraContainer{
+  margin: 20px;
+}
 .container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   background-color: #f7f5f1;
   height: 500px;
+  flex-wrap: wrap;
 }
-.icon {
-  width: 120px;
-  height: 120px;
+.imgContainer{
+display: flex;
+flex-direction: column;
+}
+
+#pageC{
+  align-items: flex-end;
+  flex: 1;
 }
 
 img {
-  object-fit: contain;
-  display: block;
+  /* display: block; */
+  object-fit:contain;
+  flex: 2;
   max-width: 300px;
   max-height: 500px;
   width: auto;
@@ -96,8 +106,7 @@ svg {
   font-weight: bold;
   font-size: 18px;
 }
-#author {
-  color: brown;
+#author ,  #pageC {
   color: grey;
 }
 .title {

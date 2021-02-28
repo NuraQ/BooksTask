@@ -2,19 +2,24 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="stylesheet" type="text/css" href="element.css" />
     <link rel="stylesheet" type="text/css" href="popup.css" />
     <link rel="stylesheet" type="text/css" href="navbar.css" />
   </head>
   <body>
     <script type="text/javascript" src="elementScript.js"></script>
-    <script type="text/javascript" src="loginScript.js"></script>
+    <script type="text/javascript" src="creditCard.js"></script>
     <script type="text/javascript" src="importFile.js"></script>
+    <script type="text/javascript" src="./navbarFunctionalities.js"></script>
 
     <div w3-include-html="navbar.html"></div>
     <div class="wrapperMain">
       <div class="container">
-        <img id="itemImage" class="child" />
+        <div class="imgContainer">
+        <img id="itemImage" alt="img_girl.jpg"class="child" />
+        <p id="pageC"></p>
+      </div>
         <div class="detailsContainer">
           <h1 id="info" class="title"></h1>
           <p id="author"></p>

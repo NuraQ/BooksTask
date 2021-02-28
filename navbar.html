@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" type="text/css" href="home.css" />
       <link rel="stylesheet" type="text/css" href="signUp.css" />
+      
     </head>
-  </head>
   <body>
-    <script type="text/javascript" src="navbarFunctionalities.js"></script>
 
   <ul class="topnav">
     <li>
       <a class="active" href="home.html">Home</a>
     </li>
-    <li>
+    <li class="hide">
       <a class="" href="purchasedBooks.html">Purchased Books</a>
     </li>
-    <li>
+    <li class="hide">
       <a class=""  onclick="signout()">Sign out</a>
-    </li>
+    </li class="hide">
     <div class="search-container">
       <input
         id="search"
@@ -30,5 +28,6 @@
       />
     </div>
   </ul>
+
 </body>
 </html>

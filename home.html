@@ -7,42 +7,49 @@
     <link rel="stylesheet" type="text/css" href="navbar.css" />
   </head>
   <body>
+
     <div w3-include-html="navbar.html"></div>
     <h2>Book Store</h2>
     <div id="content" class="container"></div>
-    <div class="form-popup" id="myForm">
-      <form action="./Element.html" class="form-container">
-        <h1 id="header">Sign Up!</h1>
-        <label for="email"><b>email</b></label>
-        <input
-          type="text"
-          placeholder="Enter id"
-          name="email"
-          id="email"
-          required
-        />
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          id="password"
-          required
-        />
-        <button class="btn" id="registerBtn" onclick="signUp()">
-          Sign Up !
-        </button>
-        <button type="button" class="btn cancel" onclick="closeForm()">
-          Cancel
-        </button>
-        OR already have an acount?<a href="#home" onclick="displayLogin()"
-          >click here!</a
-        >
-        <button type="button" class="btn" onclick="login()">login</button>
-      </form>
-    </div>
+    <div class="formc" id="formc">
+      <div class="form-container sign-up-container">
+          <form action="./home.html">
+              <h1>Create Account</h1>
+              <span> use your email for registration</span>
+              <input type="text" placeholder="Name" />
+              <input type="email" placeholder="Email" id="emailSignup"   required />
+              <input type="password" placeholder="Password" id="passwordSignup"  required/>
+              <button onclick="signUp()">Sign Up</button>
+          </form>
+      </div>
+      <div class="form-container sign-in-container">
+          <form >
+              <h1>Sign in</h1>
+              <span> use your account</span>
+              <input type="email" placeholder="Email" id="email"  required>
+              <input type="password" placeholder="Password" id="password"  required />
+              <button onclick="login()" >Sign In</button>
+          </form>
+      </div>
+      <div class="overlay-container">
+          <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                  <h1>Welcome Back!</h1>
+                  <p class="welcome">To keep connected with us please login with your personal info</p>
+                  <button class="ghost" id="signIn" >Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                  <h1>Hello, There!</h1>
+                  <p class="welcome">Enter your credentials and start journey with us</p>
+                  <button class="ghost"  id="signUp">Sign Up</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="loginScript.js"></script>
     <script type="text/javascript" src="importFile.js"></script>
+
   </body>
 </html>
