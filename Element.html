@@ -2,43 +2,37 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="stylesheet" type="text/css" href="element.css" />
     <link rel="stylesheet" type="text/css" href="popup.css" />
     <link rel="stylesheet" type="text/css" href="navbar.css" />
   </head>
   <body>
-    <script type="text/javascript" src="elementScript.js"></script>
-    <script type="text/javascript" src="creditCard.js"></script>
-    <script type="text/javascript" src="importFile.js"></script>
-    <script type="text/javascript" src="./navbarFunctionalities.js"></script>
-
     <div w3-include-html="navbar.html"></div>
     <div class="wrapperMain">
       <div class="container">
         <div class="imgContainer">
-        <img id="itemImage" alt="img_girl.jpg"class="child" />
-        <p id="pageC"></p>
-      </div>
+          <img id="itemImage" alt="img_girl.jpg" class="child" />
+          <p id="pageC"></p>
+        </div>
         <div class="detailsContainer">
           <h1 id="info" class="title"></h1>
           <p id="author"></p>
           <div class="priceContainer">
             <p id="price">Price: 9.99$</p>
             <div class="stars" onclick="fillColor()">
-            <svg class="star" ></svg>
-            <svg class="star"></svg>
-            <svg class="star"></svg>
-            <svg class="star"></svg>
-            <svg class="star"></svg>
-          </div>
+              <svg class="star"></svg>
+              <svg class="star"></svg>
+              <svg class="star"></svg>
+              <svg class="star"></svg>
+              <svg class="star"></svg>
+            </div>
           </div>
           <p id="category"></p>
-          <button onclick="openForm()">Buy</button>
+          <button id="buy" onclick="openForm()">Buy</button>
         </div>
       </div>
       <hr />
-
       <div class="paraContainer">
         <h1 class="detailsTitle">Book Introduction</h1>
         <p id="description" class="child"></p>
@@ -49,10 +43,8 @@
     <div class="form-popup" id="myForm">
       <div class="form-container">
         <h1>credit card info</h1>
-
         <label for="email"><b>credit card id</b></label>
         <input type="text" placeholder="Enter id" name="email" required />
-
         <label for="psw"><b>Password</b></label>
         <input
           type="password"
@@ -60,12 +52,17 @@
           name="psw"
           required
         />
-
         <button onclick="addBook()" class="btn">Buy</button>
         <button type="button" class="btn cancel" onclick="closeForm()">
           Close
         </button>
       </div>
     </div>
+
+    <script type="text/javascript" src="creditCard.js"></script>
+    <script type="text/javascript" src="importFile.js"></script>
+    <script type="text/javascript" src="./navbarFunctionalities.js"></script>
+    <script type="text/javascript" src="elementScript.js"></script>
+
   </body>
 </html>

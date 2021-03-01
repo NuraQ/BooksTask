@@ -56,7 +56,6 @@ img {
   margin-right: auto;
 }
 
-
 @media only screen and (max-width:500px) {
     .column{
       flex: 100%;

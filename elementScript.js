@@ -1,4 +1,10 @@
 let bookObject = null;
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+  // allowPurchase()
+
+});
+
 window.onload = function () {
   includeHTML();
   autheniticate();
@@ -30,6 +36,7 @@ window.onload = function () {
 
     });
   autrhor.innerHTML = "by: " + book.volumeInfo.authors;
+
 };
 function fillColor() {
   var starContainer = document.querySelector(".stars");
@@ -59,4 +66,11 @@ function autheniticate() {
       });
     }
   }, 300);
+}
+
+function allowPurchase() {
+ let link = window.location.href
+   let buyButtton = document.getElementById('buy');
+   buyButtton.classList.add("hide")
+   buyButtton.style.display = "none"
 }

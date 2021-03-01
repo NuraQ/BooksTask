@@ -1,6 +1,9 @@
 window.onload = function () {
   includeHTML();
   autheniticate();
+  setTimeout(() => {
+    setBarActive('purchased')
+  }, 500);
   let allUsersbooks = JSON.parse(localStorage.getItem("bookList"));
   let user = localStorage.getItem("logged");
   if (allUsersbooks != null) {
@@ -12,6 +15,16 @@ window.onload = function () {
   }
 };
 
+function setBarActive(id) {
+  let ele = document.getElementById(`${id}`)
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) {
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  console.log('Click!');
+    ele.className += " active"
+    // ele.style.backgroundColor="red"
+}
 function autheniticate() {
   let user = localStorage.getItem("logged");
   setTimeout(function () {
@@ -25,6 +38,11 @@ function autheniticate() {
   }, 200);
 }
 
+function setActive(event) {
+  event.target.getAttribute("data-color");
+  event.target.style.backgroundColor = "blue";
+
+}
 
 function displayBooks(data) {
   var div = document.getElementById("content");
@@ -45,8 +63,7 @@ function displayBooks(data) {
     img.loading = "lazy";
     img.addEventListener("click", () => {
       localStorage.setItem("bookObj", JSON.stringify(item));
-      // window.location.href = `./Element.html`;
-      // window.location.href = `./loginPopup.html`;
+
       let loggedUser = localStorage.getItem("logged");
       if (loggedUser != "" && loggedUser != null) {
         window.location.href = `./Element.html`;

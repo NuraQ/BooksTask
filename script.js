@@ -5,6 +5,7 @@ window.onload = function () {
   includeHTML();
   fetchData();
   autheniticate();
+
 };
 
 function autheniticate() {
@@ -64,7 +65,6 @@ function displayBooks(data) {
     img.src = item.volumeInfo.imageLinks
       ? item.volumeInfo.imageLinks.thumbnail
       : "";
-      img.alt="./img_girl.jpg"
     img.className = "center";
     img.loading = "lazy";
     img.addEventListener("click", () => {

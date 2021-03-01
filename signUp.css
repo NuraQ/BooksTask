@@ -3,7 +3,6 @@
   filter: blur(2px);
 }
 
-
 .close {
   margin: 20px;
 }
@@ -19,7 +18,6 @@ h1 {
   font-weight: bold;
   margin: 0;
 }
-
 
 span {
   font-size: 12px;
@@ -118,6 +116,8 @@ button.ghost {
 }
 
 .overlay {
+  display: flex;
+  flex-direction: column;
   background: #3a0e18;
   background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
   color: #fff;
@@ -185,36 +185,95 @@ button.ghost {
   transform: translateY(20%);
 }
 
-@media only screen and (max-width: 600px) {
-    .formc {
-      width: 500px;
-      /* margin-top: 0; */
-      height: 500px;
-
-    }
-   h1{
-       font-size: medium;
-   }
-   button{
+@media screen and (max-width: 600px) {
+  .formc {
+    width: 500px;
+    /* margin-top: 0; */
+  }
+  h1 {
+    font-size: medium;
+  }
+  /* button{
        width: 10%;
-   }
-   .overlay-panel{
-       width: 30%;
-   }
+   } */
+  .sign-in-container {
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 2;
   }
 
-  @media only screen and (max-width: 400px) {
-    .formc {
-      width: 400px;
-
-    }
-   h1{
-       font-size: medium;
-   }
-   button{
-       width: 10%;
-   }
-   .overlay-panel{
-       width: 30%;
-   }
+  .sign-up-container {
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 2;
   }
+  .overlay-container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+  }
+
+  .overlay{
+          /* display: flex; */
+    /* flex-direction: column; */    /* display: flex; */
+    /* flex-direction: column; */
+    background: #3a0e18;
+    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+    color: #fff;
+    position: relative;
+    left: 0%;
+    top: -100%;
+    height: 200%;
+    width: 100%;
+    /* left: 0; */
+    /* top: 0; */
+    transform: translateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-right {
+    bottom: 0;
+    transform: translateY(0);
+}
+  
+
+}
+
+@media only screen and (max-width: 400px) {
+  .formc {
+    width: 400px;
+  }
+  h1 {
+    font-size: medium;
+  }
+  /* button{
+       width: 10%;
+   } */
+
+  .sign-up-container {
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+  }
+}

@@ -9,14 +9,23 @@ window.onscroll = function () {
     } else {
       currentIndex += totalItemsCount - currentIndex;
     }
-   
-    if (search && currentIndex < totalItemsCount) {
+    if (!search && currentIndex < totalItemsCount) {
+      fetchData();
+    } else if (search && currentIndex < totalItemsCount) {
       getSearchApiResult();
     }
   }
 };
 
-
+function setBarActive(id) {
+  let ele = document.getElementById(`${id}`)
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) {
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  console.log('Click!');
+    ele.className += " active"
+}
 
 function displaySearchedBooks(data) {
   var div = document.getElementById("content");
@@ -32,7 +41,7 @@ function displaySearchedBooks(data) {
       : "";
     img.className = "center";
     img.loading = "lazy";
-  
+
     p.appendChild(text);
     col.appendChild(img);
     col.appendChild(p);
@@ -79,5 +88,5 @@ function signout() {
     el.classList.remove("show");
     el.className += "hide";
   });
-  window.location.href = "./home.html"
+  window.location.href = "./home.html";
 }
